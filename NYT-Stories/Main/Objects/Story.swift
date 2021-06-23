@@ -13,6 +13,8 @@ protocol StoryProtocol {
     func getStoryDescription() -> String
     func getStoryMedia() -> [StoryMedia]?
     func getStoryDate() -> String
+    func getStoryUrl() -> URL
+    func getStoryAuthor() -> String
 }
 
 protocol MediaProtocol {
@@ -64,6 +66,12 @@ extension Story: StoryProtocol {
     }
     func getStoryDate() -> String {
         return publishedDate
+    }
+    func getStoryUrl() -> URL {
+        return storyURL
+    }
+    func getStoryAuthor() -> String {
+        return storyAuthor
     }
 }
 

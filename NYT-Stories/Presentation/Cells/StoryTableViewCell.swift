@@ -13,6 +13,7 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var storyImage: UIImageView!
     @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private var authorLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,7 @@ class StoryTableViewCell: UITableViewCell {
 
     func configure(from story: StoryProtocol) {
         self.titleLabel.text = story.getStoryTitle()
-
+        self.authorLabel.text = story.getStoryAuthor()
         // Date handling
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"

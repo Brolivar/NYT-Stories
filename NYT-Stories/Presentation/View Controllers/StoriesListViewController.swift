@@ -13,7 +13,7 @@ class StoriesListViewController: UIViewController {
     //Ideally this should be injected by a third party entity (i.e navigator, segue manager, etc...)
     var storiesManager: StoriesModelController! = StoriesModelController()
     private let refreshControl = UIRefreshControl()
-    static let cellHeight = 130
+    static let cellHeight = 145
     @IBOutlet private var storiesTableView: UITableView!
 
     override func viewDidLoad() {
@@ -48,6 +48,21 @@ class StoriesListViewController: UIViewController {
             }
         })
 
+    }
+
+    // MARK: - Navigation
+    // A better solution would have been the implementation of coordinators to manage app navigation, ensuring better
+    // isolation, abstraction, and better separation of responsabilities
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == StoryDetailsViewController.detailSegueId {
+            if let destVc = segue.destination as? StoryDetailsViewController, let selectedIndexPath = self.storiesTableView.indexPathForSelectedRow {
+                self.storiesManager.selectedStory(at: selectedIndexPath.row)
+                destVc.storyManager = self.storiesManager
+                // Change back button title
+                let backItem = UIBarButtonItem()
+                navigationItem.backBarButtonItem = backItem
+            }
+        }
     }
 }
 
