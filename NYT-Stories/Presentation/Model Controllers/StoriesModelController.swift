@@ -71,7 +71,6 @@ extension StoriesModelController: StoriesControllerProtocol {
             switch result {
             case .success(let storiesList):
                 print("Stories request successfully")
-//                print("Stories List: ", storiesList)
                 for newStory in storiesList {
                     self.viewModel.append(newStory)
                 }
@@ -102,8 +101,8 @@ extension StoriesModelController: StoriesControllerProtocol {
                 completion(image)
             } else {
                 if let imageUrl = self.storyMediaAt(index)?.getImageURL() {
-                    self.downloadImage(storyID: storyID, imageUrl: imageUrl) { pugImage in
-                        completion(pugImage)
+                    self.downloadImage(storyID: storyID, imageUrl: imageUrl) { storyImage in
+                        completion(storyImage)
                     }
                 } else {
                     completion(.none)
