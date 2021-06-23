@@ -16,6 +16,11 @@
 		BCF4E61A26827408006A9CA1 /* StoriesModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E61926827408006A9CA1 /* StoriesModelController.swift */; };
 		BCF4E61E268276A4006A9CA1 /* StoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E61D268276A4006A9CA1 /* StoryDetailsViewController.swift */; };
 		BCF4E62026827727006A9CA1 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E61F26827727006A9CA1 /* Story.swift */; };
+		BCF4E62226827ABA006A9CA1 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62126827ABA006A9CA1 /* StoryTableViewCell.swift */; };
+		BCF4E624268296A0006A9CA1 /* ArrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E623268296A0006A9CA1 /* ArrayViewModel.swift */; };
+		BCF4E62626829A51006A9CA1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62526829A51006A9CA1 /* NetworkManager.swift */; };
+		BCF4E62826829AD0006A9CA1 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62726829AD0006A9CA1 /* AppURL.swift */; };
+		BCF4E62A26829B6B006A9CA1 /* ApiResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62926829B6B006A9CA1 /* ApiResponses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		BCF4E61926827408006A9CA1 /* StoriesModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModelController.swift; sourceTree = "<group>"; };
 		BCF4E61D268276A4006A9CA1 /* StoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailsViewController.swift; sourceTree = "<group>"; };
 		BCF4E61F26827727006A9CA1 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		BCF4E62126827ABA006A9CA1 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
+		BCF4E623268296A0006A9CA1 /* ArrayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayViewModel.swift; sourceTree = "<group>"; };
+		BCF4E62526829A51006A9CA1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BCF4E62726829AD0006A9CA1 /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
+		BCF4E62926829B6B006A9CA1 /* ApiResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +141,7 @@
 		BCF4E61426826699006A9CA1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				BCF4E62126827ABA006A9CA1 /* StoryTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 		BCF4E6152682669F006A9CA1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BCF4E623268296A0006A9CA1 /* ArrayViewModel.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -162,6 +174,7 @@
 			children = (
 				BCF4E61B26827429006A9CA1 /* Objects */,
 				BCF4E61C26827432006A9CA1 /* Support */,
+				BCF4E62526829A51006A9CA1 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -169,6 +182,7 @@
 		BCF4E61B26827429006A9CA1 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				BCF4E62926829B6B006A9CA1 /* ApiResponses.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -176,6 +190,7 @@
 		BCF4E61C26827432006A9CA1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				BCF4E62726829AD0006A9CA1 /* AppURL.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -250,12 +265,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF4E62626829A51006A9CA1 /* NetworkManager.swift in Sources */,
 				BCF4E5FD268257FB006A9CA1 /* StoriesListViewController.swift in Sources */,
+				BCF4E62A26829B6B006A9CA1 /* ApiResponses.swift in Sources */,
 				BCF4E61A26827408006A9CA1 /* StoriesModelController.swift in Sources */,
+				BCF4E624268296A0006A9CA1 /* ArrayViewModel.swift in Sources */,
 				BCF4E5F9268257FB006A9CA1 /* AppDelegate.swift in Sources */,
 				BCF4E61E268276A4006A9CA1 /* StoryDetailsViewController.swift in Sources */,
 				BCF4E5FB268257FB006A9CA1 /* SceneDelegate.swift in Sources */,
 				BCF4E62026827727006A9CA1 /* Story.swift in Sources */,
+				BCF4E62226827ABA006A9CA1 /* StoryTableViewCell.swift in Sources */,
+				BCF4E62826829AD0006A9CA1 /* AppURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

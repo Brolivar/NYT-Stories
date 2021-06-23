@@ -7,7 +7,58 @@
 
 import Foundation
 
-protocol StoryProtocol {}
+protocol StoryProtocol {
+    func getStoryID() -> String
+    func getStoryTitle() -> String
+    func getStoryDescription() -> String
+    func getStoryImage() -> [StoryMedia]
+    func getStoryDate() -> String
+}
 
+// By abstracting the story into a protocol we ensure the whole object is not shared,
+// only the protocol with the functions to read or write, which is way safer.
+struct Story: Decodable {
+    private var storyID: String
+    private var storyTitle: String
+    private var storyDescription: String
+    private var storyMedia: [StoryMedia]
+    private var storyAuthor: String
+    private var storyURL: URL
+    private var publishedDate: String
 
-struct Story {}
+    enum CodingKeys: String, CodingKey {
+        case storyID = "uri"
+        case storyTitle = "title"
+        case storyDescription = "abstract"
+        case storyMedia = "multimedia"
+        case storyAuthor = "byline"
+        case storyURL = "url"
+        case publishedDate = "published_date"
+    }
+
+}
+
+struct StoryMedia: Decodable {
+    private var mediaUrl: URL
+    enum CodingKeys: String, CodingKey {
+        case mediaUrl = "url"
+    }
+}
+// MARK: - StoryProtocol Extension
+extension Story: StoryProtocol {
+    func getStoryID() -> String {
+        return storyID
+    }
+    func getStoryTitle() -> String {
+        return storyTitle
+    }
+    func getStoryDescription() -> String {
+        return storyDescription
+    }
+    func getStoryImage() -> [StoryMedia] {
+        return storyMedia
+    }
+    func getStoryDate() -> String {
+        return publishedDate
+    }
+}
