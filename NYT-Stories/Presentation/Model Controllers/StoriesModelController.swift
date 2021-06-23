@@ -10,15 +10,16 @@ import UIKit
 protocol StoriesControllerProtocol: AnyObject {
     func requestStories(completion: @escaping (Bool) -> Void)
     func count() -> Int
-    func storyAt(_ index: Int) -> StoryProtocol
-//    func imageAt(_ index: Int, completion: @escaping (UIImage?) -> Void)
+    func storyAt(_ index: Int) -> StoryProtocol?
+    func imageAt(_ index: Int, completion: @escaping (UIImage?) -> Void)
     func selectedStory(at index: Int)
-//    func removeStoriesData()
+    func storyMediaAt(_ index: Int) -> StoryMedia?
+    func removeStoriesData(completion: () -> Void)
 }
 
 protocol StoriesManagerProtocol: AnyObject {
-//    func getSelectedStory() -> StoryProtocol?
-//    func getImage(completion: @escaping (UIImage?) -> Void)
+    func getSelectedStory() -> StoryProtocol?
+    func getImage(completion: @escaping (UIImage?) -> Void)
 }
 
 // Ideally we would have 2 separates Model Controllers - one for the storiesList array, another one for each Story item that would be injected to "StoryDetailsVc", but due to the low complexity of the project, and time constraints we're only implementing one
@@ -41,12 +42,26 @@ class StoriesModelController: ArrayViewModel {
 // MARK: - StoriesControllerProtocol extension
 extension StoriesModelController: StoriesControllerProtocol {
 
-    func storyAt(_ index: Int) -> StoryProtocol {
-        return self.itemAtIndex(index)
+    func storyAt(_ index: Int) -> StoryProtocol? {
+        if index >= 0 && index < self.viewModel.count {     // Avoid out of index errors.
+            return self.itemAtIndex(index)
+        } else {
+            return .none
+        }
     }
 
     func selectedStory(at index: Int) {
         self.selectedStory = index
+    }
+
+    // Note: We only retrieve the first image for this project's purpose
+    // but we could actually return the whole array, and display them on the detailView
+    func storyMediaAt(_ index: Int) -> StoryMedia? {
+        if let storyMedia = self.viewModel[index].getStoryMedia() {
+            return storyMedia.first
+        } else {
+            return .none
+        }
     }
 
     func requestStories(completion: @escaping (Bool) -> Void) {
@@ -67,4 +82,68 @@ extension StoriesModelController: StoriesControllerProtocol {
             }
         }
     }
+
+
+    // Download image, and it to the dictionary
+    private func downloadImage(storyID: String, imageUrl: URL, completion: @escaping (UIImage?) -> Void) {
+        self.networkManager.downloadImage(from: imageUrl, completion: { [weak self] imageData in
+            let storyImage = UIImage(data: imageData)
+            self?.storyImages[storyID] = storyImage
+            completion(storyImage)
+        })
+    }
+
+    func imageAt(_ index: Int, completion: @escaping (UIImage?) -> Void) {
+
+        if index >= 0 && index < self.viewModel.count {
+            // We avoid redownloading
+            let storyID = self.viewModel[index].getStoryID()
+            if let image = self.storyImages[storyID] {
+                completion(image)
+            } else {
+                if let imageUrl = self.storyMediaAt(index)?.getImageURL() {
+                    self.downloadImage(storyID: storyID, imageUrl: imageUrl) { pugImage in
+                        completion(pugImage)
+                    }
+                } else {
+                    completion(.none)
+                }
+            }
+        }
+    }
+    // Remove Story data - used for refresh control
+    func removeStoriesData(completion: () -> Void) {
+        self.viewModel.removeAll()
+        self.storyImages.removeAll()
+        self.selectedStory = .none
+        completion()
+    }
+}
+
+extension StoriesModelController: StoriesManagerProtocol {
+    func getSelectedStory() -> StoryProtocol? {
+        if let index = self.selectedStory {
+            return self.viewModel[index]
+        } else {
+            return .none
+        }
+    }
+
+    func getImage(completion: @escaping (UIImage?) -> Void) {
+        if let index = self.selectedStory {
+            let storyID = self.viewModel[index].getStoryID()
+            if let image = self.storyImages[storyID] {     // Image is already downloaded
+                completion(image)
+            } else {
+                if let imageURL = self.storyMediaAt(index)?.getImageURL() {
+                    self.downloadImage(storyID: storyID, imageUrl: imageURL) { image in
+                        completion(image)
+                    }
+                } else {
+                    completion(.none)
+                }
+            }
+        }
+    }
+
 }

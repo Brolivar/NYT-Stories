@@ -28,7 +28,7 @@ extension NetworkManager: NetworkControllerProtocol {
 
         var storiesList: [Story] = []          // Array of retrieved stories's urls
         if let storiesUrl = URL(string: AppURL.base + AppURL.Api.topStories + AppURL.Api.apiKey) {
-            URLSession.shared.dataTask(with: storiesUrl, completionHandler: { [weak self] (data, response, error) in
+            URLSession.shared.dataTask(with: storiesUrl, completionHandler: { (data, response, error) in
                 do {
                     guard let responseData = data else {
                         completion(.failure(.requestError))

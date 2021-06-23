@@ -11,8 +11,12 @@ protocol StoryProtocol {
     func getStoryID() -> String
     func getStoryTitle() -> String
     func getStoryDescription() -> String
-    func getStoryImage() -> [StoryMedia]
+    func getStoryMedia() -> [StoryMedia]?
     func getStoryDate() -> String
+}
+
+protocol MediaProtocol {
+    func getImageURL() -> URL
 }
 
 // By abstracting the story into a protocol we ensure the whole object is not shared,
@@ -21,7 +25,7 @@ struct Story: Decodable {
     private var storyID: String
     private var storyTitle: String
     private var storyDescription: String
-    private var storyMedia: [StoryMedia]
+    private var storyMedia: [StoryMedia]?
     private var storyAuthor: String
     private var storyURL: URL
     private var publishedDate: String
@@ -55,10 +59,17 @@ extension Story: StoryProtocol {
     func getStoryDescription() -> String {
         return storyDescription
     }
-    func getStoryImage() -> [StoryMedia] {
+    func getStoryMedia() -> [StoryMedia]? {
         return storyMedia
     }
     func getStoryDate() -> String {
         return publishedDate
+    }
+}
+
+// MARK: - MediaProtocol Extension
+extension StoryMedia: MediaProtocol {
+    func getImageURL() -> URL {
+        return mediaUrl
     }
 }
