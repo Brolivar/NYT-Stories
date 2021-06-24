@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC2F48AC268417E0004235A4 /* Story.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F48AB268417E0004235A4 /* Story.json */; };
 		BCF4E5F9268257FB006A9CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E5F8268257FB006A9CA1 /* AppDelegate.swift */; };
 		BCF4E5FB268257FB006A9CA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E5FA268257FB006A9CA1 /* SceneDelegate.swift */; };
 		BCF4E5FD268257FB006A9CA1 /* StoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E5FC268257FB006A9CA1 /* StoriesListViewController.swift */; };
@@ -21,9 +22,22 @@
 		BCF4E62626829A51006A9CA1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62526829A51006A9CA1 /* NetworkManager.swift */; };
 		BCF4E62826829AD0006A9CA1 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62726829AD0006A9CA1 /* AppURL.swift */; };
 		BCF4E62A26829B6B006A9CA1 /* ApiResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E62926829B6B006A9CA1 /* ApiResponses.swift */; };
+		BCF4E6322683FAFB006A9CA1 /* NYT_StoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E6312683FAFB006A9CA1 /* NYT_StoriesTests.swift */; };
+		BCF4E63A26840400006A9CA1 /* StoriesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4E63926840400006A9CA1 /* StoriesRouterTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BCF4E6342683FAFB006A9CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF4E5ED268257FB006A9CA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF4E5F4268257FB006A9CA1;
+			remoteInfo = "NYT-Stories";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		BC2F48AB268417E0004235A4 /* Story.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Story.json; sourceTree = "<group>"; };
 		BCF4E5F5268257FB006A9CA1 /* NYT-Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYT-Stories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF4E5F8268257FB006A9CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCF4E5FA268257FB006A9CA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +54,10 @@
 		BCF4E62526829A51006A9CA1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BCF4E62726829AD0006A9CA1 /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
 		BCF4E62926829B6B006A9CA1 /* ApiResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponses.swift; sourceTree = "<group>"; };
+		BCF4E62F2683FAFB006A9CA1 /* NYT-StoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYT-StoriesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF4E6312683FAFB006A9CA1 /* NYT_StoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYT_StoriesTests.swift; sourceTree = "<group>"; };
+		BCF4E6332683FAFB006A9CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF4E63926840400006A9CA1 /* StoriesRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesRouterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,13 +68,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCF4E62C2683FAFB006A9CA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC2F48AA268417C7004235A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC2F48AB268417E0004235A4 /* Story.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BCF4E5EC268257FB006A9CA1 = {
 			isa = PBXGroup;
 			children = (
 				BCF4E5F7268257FB006A9CA1 /* NYT-Stories */,
+				BCF4E6302683FAFB006A9CA1 /* NYT-StoriesTests */,
 				BCF4E5F6268257FB006A9CA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF4E5F5268257FB006A9CA1 /* NYT-Stories.app */,
+				BCF4E62F2683FAFB006A9CA1 /* NYT-StoriesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +230,17 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		BCF4E6302683FAFB006A9CA1 /* NYT-StoriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC2F48AA268417C7004235A4 /* Resources */,
+				BCF4E6312683FAFB006A9CA1 /* NYT_StoriesTests.swift */,
+				BCF4E6332683FAFB006A9CA1 /* Info.plist */,
+				BCF4E63926840400006A9CA1 /* StoriesRouterTests.swift */,
+			);
+			path = "NYT-StoriesTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +261,24 @@
 			productReference = BCF4E5F5268257FB006A9CA1 /* NYT-Stories.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BCF4E62E2683FAFB006A9CA1 /* NYT-StoriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF4E6362683FAFB006A9CA1 /* Build configuration list for PBXNativeTarget "NYT-StoriesTests" */;
+			buildPhases = (
+				BCF4E62B2683FAFB006A9CA1 /* Sources */,
+				BCF4E62C2683FAFB006A9CA1 /* Frameworks */,
+				BCF4E62D2683FAFB006A9CA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCF4E6352683FAFB006A9CA1 /* PBXTargetDependency */,
+			);
+			name = "NYT-StoriesTests";
+			productName = "NYT-StoriesTests";
+			productReference = BCF4E62F2683FAFB006A9CA1 /* NYT-StoriesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +290,10 @@
 				TargetAttributes = {
 					BCF4E5F4268257FB006A9CA1 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					BCF4E62E2683FAFB006A9CA1 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = BCF4E5F4268257FB006A9CA1;
 					};
 				};
 			};
@@ -243,6 +311,7 @@
 			projectRoot = "";
 			targets = (
 				BCF4E5F4268257FB006A9CA1 /* NYT-Stories */,
+				BCF4E62E2683FAFB006A9CA1 /* NYT-StoriesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +324,14 @@
 				BCF4E605268257FD006A9CA1 /* LaunchScreen.storyboard in Resources */,
 				BCF4E602268257FD006A9CA1 /* Assets.xcassets in Resources */,
 				BCF4E600268257FB006A9CA1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF4E62D2683FAFB006A9CA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2F48AC268417E0004235A4 /* Story.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +356,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCF4E62B2683FAFB006A9CA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF4E63A26840400006A9CA1 /* StoriesRouterTests.swift in Sources */,
+				BCF4E6322683FAFB006A9CA1 /* NYT_StoriesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCF4E6352683FAFB006A9CA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCF4E5F4268257FB006A9CA1 /* NYT-Stories */;
+			targetProxy = BCF4E6342683FAFB006A9CA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BCF4E5FE268257FB006A9CA1 /* Main.storyboard */ = {
@@ -455,6 +549,48 @@
 			};
 			name = Release;
 		};
+		BCF4E6372683FAFB006A9CA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YDQ2G3PC42;
+				INFOPLIST_FILE = "NYT-StoriesTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jebolivarh.NYTStories.NYT-StoriesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYT-Stories.app/NYT-Stories";
+			};
+			name = Debug;
+		};
+		BCF4E6382683FAFB006A9CA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YDQ2G3PC42;
+				INFOPLIST_FILE = "NYT-StoriesTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jebolivarh.NYTStories.NYT-StoriesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYT-Stories.app/NYT-Stories";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -472,6 +608,15 @@
 			buildConfigurations = (
 				BCF4E60A268257FD006A9CA1 /* Debug */,
 				BCF4E60B268257FD006A9CA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF4E6362683FAFB006A9CA1 /* Build configuration list for PBXNativeTarget "NYT-StoriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF4E6372683FAFB006A9CA1 /* Debug */,
+				BCF4E6382683FAFB006A9CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

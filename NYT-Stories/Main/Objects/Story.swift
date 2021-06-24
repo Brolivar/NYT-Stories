@@ -23,7 +23,7 @@ protocol MediaProtocol {
 
 // By abstracting the story into a protocol we ensure the whole object is not shared,
 // only the protocol with the functions to read or write, which is way safer.
-struct Story: Decodable {
+struct Story: Codable {
     private var storyID: String
     private var storyTitle: String
     private var storyDescription: String
@@ -44,7 +44,7 @@ struct Story: Decodable {
 
 }
 
-struct StoryMedia: Decodable {
+struct StoryMedia: Codable {
     private var mediaUrl: URL
     enum CodingKeys: String, CodingKey {
         case mediaUrl = "url"

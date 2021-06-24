@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIStoriesResponse: Decodable {
+struct APIStoriesResponse: Codable {
     let status: String?
     let numResults: Int?
     let section: String?

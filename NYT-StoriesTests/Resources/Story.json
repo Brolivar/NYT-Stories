@@ -1,0 +1,36 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2021 The New York Times Company. All Rights Reserved.",
+    "section": "home",
+    "last_updated": "2021-06-23T21:43:58-04:00",
+    "num_results": 49,
+    "results": [{
+        "section": "us",
+        "subsection": "politics",
+        "title": "Staving Off G.O.P. Attacks, Democrats Show New Urgency on Crime",
+        "abstract": "A strong showing by Eric Adams in the New York mayoral race and President Biden’s announcement of a new crime-fighting agenda signal a shift by Democrats toward themes of public safety.",
+        "url": "https://www.nytimes.com/2021/06/23/us/politics/gop-democrats-defund-police-biden.html",
+        "uri": "nyt://article/dc98d490-3a44-5a13-a402-ed7d9a0937a0",
+        "byline": "By Alexander Burns",
+        "item_type": "Article",
+        "updated_date": "2021-06-23T20:59:42-04:00",
+        "created_date": "2021-06-23T18:47:24-04:00",
+        "published_date": "2021-06-23T18:47:24-04:00",
+        "material_type_facet": "",
+        "kicker": "News Analysis",
+        "des_facet": ["Police Reform", "United States Politics and Government", "American Rescue Plan (2021)"],
+        "org_facet": ["Democratic Party", "Republican Party"],
+        "per_facet": ["Adams, Eric L", "Biden, Joseph R Jr"],
+        "geo_facet": ["New York City"],
+        "multimedia": [{
+            "url": "https://static01.nyt.com/images/2021/06/23/us/politics/23dems-crime1/merlin_189697710_9e3c4d60-14ff-431e-b786-b8de0fb89ad0-superJumbo.jpg",
+            "format": "superJumbo",
+            "height": 1365,
+            "width": 2048,
+            "type": "image",
+            "subtype": "photo",
+            "caption": "Eric Adams, a former police officer and a Democratic candidate for New York City mayor, has denounced “Defund the Police” activists as a collection of affluent whites.",
+            "copyright": "Sarah Blesener for The New York Times"
+        }],
+    }]
+}
